@@ -2,18 +2,16 @@
 
 function Form() {
   return (
-    <>
-        
-        <h1 className="font-black text-5xl text-center md:w-2/3 mx-auto ">
-          Seguimiento Pacientes {" "}
-
-          <span className="text-indigo-600">
-            Veterinaria
-          </span>
-        
-        </h1>
-
-    </>
+  <div className="md:w-1/2 lg:w-2/5">
+  
+  <h2 className=" font-black text-3xl text-center">Seguimiento Pacientes</h2>
+    <p className="text-lg mt-5 text-center">
+    Añade Pacientes y{' '}
+    <span className="text-indigo-600 font-bold text-lg">Administralos</span>
+    </p>
+  
+  </div>
+  
   )
 }
 
