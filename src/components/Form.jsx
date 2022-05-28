@@ -1,6 +1,6 @@
 import {useState,useEffect} from 'react';
 
-function Form() {
+function Form({propSetPacientes}) {
 
   const [nombreMascota,setNombreMascota]=useState('');
   const [propietario,setPropietario]=useState('');
@@ -9,6 +9,8 @@ function Form() {
   const [sintomas,setSintomas]=useState('');
 
   const [error,setError]=useState(false);
+
+  
 
   const handleSubmit=(e) => {
 
@@ -21,6 +23,8 @@ function Form() {
        }else{
          console.log('todos llenos');
          setError(false);
+         const paciente=[nombreMascota,propietario,email,fecha,sintomas];
+         propSetPacientes(paciente);
      }
   }
 
