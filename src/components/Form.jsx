@@ -1,6 +1,6 @@
 import {useState,useEffect} from 'react';
 
-function Form({propSetPacientes}) {
+function Form({propPacientes,propSetPacientes})  {
 
   const [nombreMascota,setNombreMascota]=useState('');
   const [propietario,setPropietario]=useState('');
@@ -18,13 +18,33 @@ function Form({propSetPacientes}) {
 
     //Validacion del Formulario (lo genero como arreglo para poder usar includes)
     if([nombreMascota,propietario,email,fecha,sintomas].includes('')){
-         console.log('hay algún campo vacio');
-         setError(true);
-       }else{
-         console.log('todos llenos');
-         setError(false);
-         const paciente=[nombreMascota,propietario,email,fecha,sintomas];
-         propSetPacientes(paciente);
+        
+      console.log('hay algún campo vacio');
+      setError(true);
+
+    }else{
+ 
+      console.log('todos llenos');
+      setError(false);
+         
+      //Creas al paciente
+      const pacienteNuevo = {nombreMascota,
+                             propietario,
+                             email,
+                             fecha,
+                             sintomas};
+        
+      //coges el array de pacientes y lo copias con ...
+      //y creas uno nuevo añadiendole el nuevo paciente
+      propSetPacientes([...propPacientes,pacienteNuevo]);
+
+      //Reiniciar el Form
+      setNombreMascota('');
+      setPropietario('');
+      setEmail('');
+      setFecha('');
+      setSintomas('');
+
      }
   }
 

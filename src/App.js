@@ -17,10 +17,13 @@ function App() {
 
      <div className='mt-12 md:flex'>
 
-        <Form/>
+        <Form  
+        propPacientes = {pacientes}
+        propSetPacientes = {setPacientes}
+       
+        />
 
-       <PacientList
-       propSetPacientes={setPacientes}/>
+       <PacientList  />
        
       </div>
     
