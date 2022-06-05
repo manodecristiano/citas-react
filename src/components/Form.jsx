@@ -1,4 +1,6 @@
 import {useState,useEffect} from 'react';
+import Error from './Error';
+
 
 function Form({propPacientes,propSetPacientes})  {
 
@@ -62,10 +64,11 @@ function Form({propPacientes,propSetPacientes})  {
     className="bg-white shadow-md rounded-lg py-10 px-5">
 
      {/*UNA TERNARIA QUE DEVUELVE UN DIV SI ES UN TRUE*/}
-      {error?
-      <div className='bg-red-800 text-white rounded text-center uppercase p-3 font-bold mb-3'>
+     {/*error &&<div className='bg-red-800 text-white rounded text-center uppercase p-3 font-bold mb-3'>
       Todos los campos son obligatorios
-      </div> :''}
+      </div> :''*/}
+
+      {error&&<Error mensaje='Todos los campos son obligatorios'/>}
 
       <div className="mb-5">
         <label htmlFor="mascota" className="block text-gray-700 font-bold">NOMBRE MASCOTA
