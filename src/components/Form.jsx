@@ -12,7 +12,11 @@ function Form({propPacientes,propSetPacientes})  {
 
   const [error,setError]=useState(false);
 
-  
+  const generarID = () => {
+    const fecha  = Date.now().toString(36); 
+    const random = Math.random().toString(36).substr(2);
+    return fecha+random;
+  }
 
   const handleSubmit=(e) => {
 
@@ -34,7 +38,9 @@ function Form({propPacientes,propSetPacientes})  {
                              propietario,
                              email,
                              fecha,
-                             sintomas};
+                             sintomas,
+                             id:generarID()
+                          };
         
       //coges el array de pacientes y lo copias con ...
       //y creas uno nuevo añadiendole el nuevo paciente

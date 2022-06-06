@@ -2,7 +2,8 @@ import Paciente from "./Paciente"
 
 export const PacientList = ({propPacientes}) => {
 
-console.log(propPacientes);
+  
+  
   return (
     <div className="md:w-1/2 lg:w-3/5 ">
   
@@ -19,10 +20,10 @@ console.log(propPacientes);
 
    </p>
 
-  { propPacientes.map( (pacienteTemporal,index) => (
+  { propPacientes.map( (pacienteTemporal) => (
 
       <Paciente 
-      key={index}
+      key={pacienteTemporal.id}
       propsPacienteTemporal={pacienteTemporal}
  
       />
