@@ -2,7 +2,7 @@ import Form from './components/Form.jsx';
 import Header from './components/Header';
 import { PacientList } from './components/PacientList.jsx';
 import {useState} from 'react';
-import Paciente from './components/Paciente.jsx';
+
 
 function App() {
 
@@ -23,7 +23,10 @@ function App() {
        
         />
 
-       <PacientList  />
+       <PacientList
+       propPacientes={pacientes}
+       
+       />
        
       </div>
     

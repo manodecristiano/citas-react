@@ -1,6 +1,8 @@
 import Paciente from "./Paciente"
 
-export const PacientList = () => {
+export const PacientList = ({propPacientes}) => {
+
+console.log(propPacientes);
   return (
     <div className="md:w-1/2 lg:w-3/5 ">
   
@@ -10,30 +12,24 @@ export const PacientList = () => {
 
     <p className="text-xl mt-5 mb-10 text-center">
       Administra tus {' '}
+      
       <span className="text-indigo-600 font-bold">
         Pacientes y Citas
      </span>
+
    </p>
 
+  { propPacientes.map( (pacienteTemporal,index) => (
 
-      <div className="md:h-screen overflow-y-scroll">
-        <Paciente/>
+      <Paciente 
+      key={index}
+      propsPacienteTemporal={pacienteTemporal}
+ 
+      />
+       
+    ))}
 
-        <Paciente/>
-
-        <Paciente/>
-
-        <Paciente/>
-
-        <Paciente/>
-
-        <Paciente/>
-   
-   
-
-   </div>
-
-    
+       
     
     </div>
   )
